@@ -8,6 +8,8 @@ public class Methods {
         int a = 2, b = 3, c = 7;
         int limit = 10;
 
+        int $name = 4;
+
         int res = displayGreatest(a, b, c);
         System.out.println(res);
 
