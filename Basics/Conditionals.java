@@ -19,7 +19,7 @@ public class Conditionals {
         int res = num3 + num4;
 
         if (res % 2 == 0) {
-            res = res * 2;
+            res *= 2;
         }
 
         System.out.println(res);
