@@ -2,9 +2,12 @@ package day08_THA;
 
 public class Sport {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+	public String getName(){
+		return "Sports";
+	}
+	
+	public String getNumberOfTeamMembers(){
+		return "Each team has n players in Sports.";
 	}
 
 }
