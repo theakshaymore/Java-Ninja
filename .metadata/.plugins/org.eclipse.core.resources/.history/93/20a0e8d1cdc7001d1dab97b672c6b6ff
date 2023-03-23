@@ -1,0 +1,27 @@
+package day07.day07;
+
+public class Result {
+	
+	public static String resultCalculator(Student student){
+		
+		
+		
+		if(student.getMarks1() < 40){
+			System.out.println("Fail");
+		}else{
+			double percentage = (student.getMarks1() + student.getMarks2() + student.getMarks3()) / 3;
+			if(percentage > 70){
+				System.out.println("A");
+			}
+			if(percentage >= 55 && percentage <= 70){
+				System.out.println("B");
+			}
+			if(percentage >= 44 && percentage < 55){
+				System.out.println("C");
+			}
+		}
+		
+	}
+	
+
+}

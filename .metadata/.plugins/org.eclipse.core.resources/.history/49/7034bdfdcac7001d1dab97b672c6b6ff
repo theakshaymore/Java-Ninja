@@ -1,0 +1,17 @@
+package day07.day07;
+
+public class Result {
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	public static void resultCalculator(Student student){
+		
+		Student s1 = new Student();
+		s1.toString();
+	}
+		
+	}
+	
+
+}

@@ -1,0 +1,62 @@
+package day05;
+
+import java.time.*;
+
+public class GAProgram01 {
+
+	public static void main(String[] args) {
+		
+		System.out.println(getLuckyNumber("27-JUL-2010"));
+	
+	}
+	
+
+
+	public static int convertMMMtoMM(String month, int year) {
+	    return LocalDate.parse(year + "-" + month.toUpperCase() + "-01").getMonthValue();
+	}
+	
+
+	    public static int getSumOfDigits(int number) {
+	        int sum = 0;
+	        while (number > 0) {
+	            sum += number % 10;
+	            number /= 10;
+	        }
+	        return sum;
+	    }
+	    
+	    public static int getLuckyNumber(String dob) {
+	        // Split the date of birth into day, month, and year parts using a hyphen as the delimiter
+	        String[] parts = dob.split("-");
+	        
+	        // Check if the input has three parts (day, month, and year), and if not, print an error message and return -1
+	        if (parts.length != 3) {
+	            System.out.println("Invalid date format.");
+	            return -1;
+	        }
+	        
+	        // Parse the day and year parts as integers
+	        int day = Integer.parseInt(parts[0]);
+	        int year = Integer.parseInt(parts[2]);
+	        
+	        // Call the convertMMMtoMM method to parse the month part as an integer
+	        int month = convertMMMtoMM(parts[1], LocalDate.now().getYear());
+	        
+	        // Calculate the sum of the digits in the day, month, and year parts
+	        int sum = getSumOfDigits(day) + getSumOfDigits(month) + getSumOfDigits(year);
+	        
+	        // Keep adding the digits of the sum until a single digit is obtained
+	        while (sum >= 10) {
+	            sum = getSumOfDigits(sum);
+	        }
+	        
+	        // Return the lucky number
+	        return sum;
+	    }
+
+
+
+
+//	    
+}

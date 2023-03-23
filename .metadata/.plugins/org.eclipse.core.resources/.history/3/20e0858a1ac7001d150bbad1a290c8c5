@@ -1,0 +1,33 @@
+package day06;
+
+public class THAProgram02 {
+
+	public static void main(String[] args) {
+		
+		
+		double num = 125.520;
+		
+		concateSumOfDigits(num);
+
+	}
+	
+	
+	public static void concateSumOfDigits(double num){
+		double sumOfLeft = 0, sumOfRight = 0;
+		for(int i = 0; i < num; i++){
+			double rem = num % 10;
+			if(i < num - 1){
+				sumOfLeft = sumOfLeft + rem;
+
+			}else{
+				sumOfRight = sumOfRight + rem;
+				
+			}
+			num = num /10;
+		}
+		System.out.println(sumOfLeft + " " + sumOfRight);
+		
+	}
+	
+
+}

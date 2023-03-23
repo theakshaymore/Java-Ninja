@@ -1,0 +1,28 @@
+package day06;
+
+public class Pp {
+
+	public static void main(String[] args) {
+		
+		
+		
+		 int first = 0, second = 1, fib = 0, count = 0, num = 4;
+
+	
+	
+
+		for(int i =0; i <= num; i++){
+			
+        fib = first + second;
+        first = second;
+        second = fib;
+        if (fib % 2 == 0) {
+           count++;
+           if (count == num) {
+              System.out.println(fib);
+           }
+        }
+		}
+     
+}
+}

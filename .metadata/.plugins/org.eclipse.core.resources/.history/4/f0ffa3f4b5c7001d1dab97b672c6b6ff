@@ -1,0 +1,15 @@
+package day07;
+
+public class Encap02 {
+
+	private int base, height;
+	
+	public Encap02(){
+		
+	}
+	public Encap02(int base, int height){
+		this.base = base;
+		this.height = height;
+	}
+	
+}

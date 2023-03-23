@@ -1,0 +1,24 @@
+package day06;
+
+public class THAProgram01 {
+
+	public static void main(String[] args) {
+		
+		
+		String s = "Java is Programming language";
+		 s = s.toLowerCase();
+		int vowels = 0, consonants = 0;
+		
+		for(int i = 0; i < s.length(); i++){
+			char c = s.charAt(i);
+			if (s.charAt(i) == 'a' || s.charAt(i) == 'e' || c == 'i' || c == 'o' || c == 'u') {
+                vowels++;
+            } else if ((c >= 'a' && c <= 'z')) {
+                consonants++;
+            }
+		}
+			
+		System.out.println("Vowels= " + vowels + " Consonants= " + consonants);
+	}
+
+}

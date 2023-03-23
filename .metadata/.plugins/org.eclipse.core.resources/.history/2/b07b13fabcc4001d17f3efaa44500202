@@ -1,0 +1,45 @@
+package day05;
+
+import java.time.*;
+
+public class GAProgram01 {
+
+	public static void main(String[] args) {
+		
+		System.out.println(getLuckyNumber("27-JUL-2010"));
+	
+	}
+	
+
+
+		public static int convertMMMtoMM(String month) {
+			return LocalDate.parse("2022-" + month.toUpperCase() + "-01").getMonthValue();
+		}	
+
+	    public static int getSumOfDigits(int number) {
+	        int sum = 0;
+	        while (number > 0) {
+	            sum += number % 10;
+	            number /= 10;
+	        }
+	        return sum;
+	    }
+	    
+	    public static int getLuckyNumber(String dob) {
+	        int day, month, year;
+	        
+	            String[] parts = dob.split("-");
+	            day = Integer.parseInt(parts[0]);
+	            month = convertMMMtoMM(parts[1]);
+	            year = Integer.parseInt(parts[2]);
+	        
+	        int sum = getSumOfDigits(day) + getSumOfDigits(month) + getSumOfDigits(year);
+	        while (sum >= 10) {
+	            sum = getSumOfDigits(sum);
+	        }
+	        return sum;
+	    }
+
+
+//	    
+}

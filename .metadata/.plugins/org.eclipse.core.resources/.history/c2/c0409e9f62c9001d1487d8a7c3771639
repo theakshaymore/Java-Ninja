@@ -1,0 +1,32 @@
+package day08_GA;
+
+public class PartTimeEmployee extends Employee {
+
+	private double hoursWorked, amountPerHour;
+
+	public PartTimeEmployee() {
+		super();
+		
+	}
+
+	public PartTimeEmployee(int id, String firstname, String lastname, String address, double amountPerHour, double hoursWorked) {
+		super(id, firstname, lastname, address);
+		this.hoursWorked = hoursWorked;
+		this.amountPerHour = amountPerHour;
+	}
+	
+	public double computeSal(){
+		return this.hoursWorked * this.amountPerHour;
+	}
+	
+	public void showDetails(){
+		System.out.println("Part Time Employee \n"
+				+ "ID = " + id + " \n"
+				+ "Name = " + getFullName(firstName, lastName) + "\n"
+				+ "Address = " + address + "\n"
+				+ "Hours Worked = " + hoursWorked + "\n"
+				+ "Amount Per Hour = " + amountPerHour 
+				);
+	}
+
+}

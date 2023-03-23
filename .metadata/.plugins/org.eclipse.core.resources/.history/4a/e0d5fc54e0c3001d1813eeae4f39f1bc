@@ -1,0 +1,54 @@
+import java.util.Arrays;
+
+public class P2 {
+
+	public static void main(String[] args) {
+		int[] arr = {1,2,3,4};
+		int rotations = 3;
+		
+		
+//		for(int i = 0; i<= arr.length-1; i++){
+			
+//		System.out.println(Arrays.toString(rotate(arr, rotations)));
+			
+			int[] rotated = rotate(arr, rotations);
+
+	        System.out.print(Arrays.toString(rotated));
+//		}
+
+	}
+	
+	
+	public static int[] rotate(int[] arr, int rotations){
+		
+		if (arr == null) {
+	        return null;
+	    }
+	    if (rotations == 0) {
+	        return arr;
+	    }
+		
+	    
+	    int length = arr.length;
+	    int[] rotatedArr = new int[arr.length];
+	    for (int i = 0; i < arr.length; i++) {
+	        int newI = i + rotations;
+	        if (newI >= arr.length) {
+	        	newI = newI - arr.length;
+	        }
+	        rotatedArr[newI] = arr[i];
+	    }
+	    
+//		for(int i = arr.length-1; i >= 0; i--) {
+//            for(int j = arr.length-1; j > 0; j--) {
+//                int temp = arr[j];
+//                arr[j] = arr[j-1];
+//                arr[j-1] = temp;
+//            }
+//        }
+//		
+		return rotatedArr;
+		
+	}
+
+}

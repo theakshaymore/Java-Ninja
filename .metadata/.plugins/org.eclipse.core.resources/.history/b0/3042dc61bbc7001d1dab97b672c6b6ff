@@ -1,0 +1,12 @@
+package day07;
+
+public class CustomerMain {
+
+	public static void main(String[] args) {
+		
+		CustomerMain obj1 = new CustomerMain();
+		System.out.println(obj1.toString());
+
+	}
+
+}

@@ -1,0 +1,40 @@
+
+public class P1 {
+
+	public static void main(String[] args) {
+		
+		
+
+	}
+	public static boolean containsConsecutiveElements(int[] arr, int target) {
+	    int sum = 0;
+	    for (int i = 0; i < arr.length; i++) {
+	        sum = arr[i];
+	        for (int j = i + 1; j < arr.length; j++) {
+	            if (sum == target) {
+	                return true;
+	            }
+	            if (sum > target) {
+	                break;
+	            }
+	            sum += arr[j];
+	        }
+	    }
+	    return false;
+	}
+	ublic static int validateInputs(int[] arr, int target) {
+	    if (arr.length == 0) {
+	        return -1;
+	    }
+	    for (int i = 0; i < arr.length; i++) {
+	        if (arr[i] <= 0) {
+	            return -2;
+	        }
+	    }
+	    if (target <= 0) {
+	        return -3;
+	    }
+	    return 1;
+	}
+
+}

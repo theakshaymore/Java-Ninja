@@ -1,0 +1,25 @@
+package day06;
+
+public class Pp {
+
+	public static void main(String[] args) {
+		
+		
+		
+		 int a = 0, b = 1, c = 0, count = 0, n = 10;
+
+	
+	
+	while (count < n) {
+        c = a + b;
+        a = b;
+        b = c;
+        if (c % 2 == 0) {
+           count++;
+           if (count == n) {
+              System.out.println("The " + n + "th even number from Fibonacci series is: " + c);
+           }
+        }
+     }
+}
+}

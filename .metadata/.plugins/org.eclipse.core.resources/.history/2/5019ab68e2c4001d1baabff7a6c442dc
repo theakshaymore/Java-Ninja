@@ -1,0 +1,62 @@
+package day05;
+
+import java.util.*;
+
+public class TOAProgram01 {
+
+	public static void main(String[] args) {
+	
+//	String s = "ANT";
+	Scanner sc = new Scanner(System.in);
+    System.out.println("Enter String: ");
+    String s = sc.nextLine();
+
+    if (isValidString(s)) {
+        if (isPositiveString(s)) {
+            System.out.println("positive string");
+        } else {
+            System.out.println("Not a positive string.");
+        }
+    } else {
+        System.out.println("Invalied string");
+    }
+    
+	}
+
+	    public static boolean isPositiveString(String str) {
+	        // Return false if the input string is null or empty
+	        if (str == null || str.isEmpty()) {
+	            return false;
+	        }
+	        
+	        // Convert the input string to lowercase for case-insensitive comparison
+	        str = str.toLowerCase();
+	        
+	        // Loop through each character in the string and compare it with the previous character
+	        for (int i = 1; i < str.length(); i++) {
+	            if (str.charAt(i) < str.charAt(i - 1)) {
+	                return false; // Return false if a character comes before the previous one in alphabetical order
+	            }
+	        }
+	        
+	        return true; // Return true if all characters come after the previous ones in alphabetical order
+	    }
+	    
+	    public static boolean isValidString(String str) {
+	        // Return false if the input string is null or empty
+	        if (str == null || str.isEmpty()) {
+	            return false;
+	        }
+	        
+	        // Loop through each character in the string and check if it is an alphabet
+	        for (int i = 0; i < str.length(); i++) {
+	            if (!Character.isLetter(str.charAt(i))) {
+	                return false; // Return false if a character is not an alphabet
+	            }
+	        }
+	        
+	        return true; // Return true if all characters are alphabets
+	    }
+	
+//
+}

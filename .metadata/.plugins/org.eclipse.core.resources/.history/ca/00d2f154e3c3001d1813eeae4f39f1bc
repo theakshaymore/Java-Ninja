@@ -1,0 +1,64 @@
+
+public class P1 {
+
+	public static void main(String[] args) {
+		
+		int[] arr = {1,3,5,7,9};
+		int target = 8;
+		
+
+	    if (validateInputs(arr, target) != 1) {
+	        System.out.println("invalid inputs");
+	       
+	    }else{
+	    	if (containsConsecutiveElements(arr, target)) {
+	            System.out.println("Array contains consecutive elements that add up to target.");
+	        } else {
+	            System.out.println("Array does not contain consecutive elements that add up to target.");
+	        }
+	    	
+	    }
+		
+//		if(validateInputs(arr, target) == 1){
+//			
+//			if(containsConsecutiveElements(arr, target)){
+//				System.out.print("True: add up to target");
+//			}else{
+//				System.out.print("False: Does not add up to target");
+//			}
+//			 
+//		}
+
+	}
+	
+	
+	public static boolean containsConsecutiveElements(int[] arr, int target) {
+		int sum = 0;
+		for(int i=0; i<arr.length; i++) {
+		      for(int j=i; j<arr.length; j++) {
+		        sum = sum + arr[j];
+		        if(sum == target) {
+		          return true;
+		        }
+		      }
+		    }
+	    return false;
+	}
+	
+	
+	public static int validateInputs(int[] arr, int target) {
+	    if (arr.length == 0) {
+	        return -1;
+	    }
+	    for (int i = 0; i < arr.length; i++) {
+	        if (arr[i] <= 0) {
+	            return -2;
+	        }
+	    }
+	    if (target <= 0) {
+	        return -3;
+	    }
+	    return 1;
+	}
+
+}

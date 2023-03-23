@@ -1,0 +1,26 @@
+package weekexam;
+
+public class PP {
+
+	public static void main(String[] args) {
+		public static void main(String[] args) {
+//	        Scanner input = new Scanner(System.in);
+//	        System.out.print("Enter a number: ");
+//	        int num = input.nextInt();
+			int num = 7;
+	        int temp = num, reverse = 0, diff;
+	        while (temp != 0) {
+	            int remainder = temp % 10;
+	            reverse = reverse * 10 + remainder;
+	            temp /= 10;
+	        }
+	        diff = Math.abs(num - reverse);
+	        System.out.println("The difference to make the number palindrome is: " + diff);
+	    }
+		
+
+	}
+
+}
+
+

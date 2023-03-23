@@ -1,0 +1,39 @@
+package day07.THADay07;
+
+public class Bowler {
+	
+	String name;
+	int wickets, balls_bowled, runs_conceded;
+	
+	public Bowler(){
+	    this.name = "";
+	    this.wickets = 0;
+	    this.balls_bowled = 0;
+	    this.runs_conceded = 0;
+	}
+	
+	public void computeBowlingAverage(){
+		double bowingAvg = runs_conceded / wickets;
+		System.out.println("Bowling Average: " + bowingAvg);
+	}
+	
+
+	public Bowler(String name, int wickets, int balls_bowled, int runs_conceded) {
+		super();
+		this.name = name;
+		this.wickets = wickets;
+		this.balls_bowled = balls_bowled;
+		this.runs_conceded = runs_conceded;
+	}
+
+
+
+
+	public static void main(String[] args) {
+		
+		Bowler b1 = new Bowler("", 5, 16, 45);
+		b1.computeBowlingAverage();
+
+	}
+
+}

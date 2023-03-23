@@ -1,0 +1,14 @@
+package day07.day07;
+
+public class Result {
+	
+	
+	public static void resultCalculator(Student student){
+		
+		Student s1 = new Student();
+		s1.toString();
+		
+	}
+	
+
+}

@@ -1,0 +1,21 @@
+package day05;
+
+public class Stringp {
+
+	public static void main(String[] args) {
+		String s = "akshay 123";
+		int countV = 0;
+		
+		
+		for(int i = 0; i< s.length(); i++){
+			char ch = s.charAt(i);
+			if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
+                countV++;
+            }
+		}
+		
+		System.out.println(countV);
+
+	}
+
+}

@@ -1,0 +1,41 @@
+
+public class P2 {
+
+	public static void main(String[] args) {
+		int[] arr = {1,2,3,4};
+		int rotations = 1;
+		
+		
+		for(int i = 0; i<= arr.length-1; i++){
+			
+		System.out.print(rotate(arr, rotations));
+		}
+
+	}
+	
+	
+	public static int[] rotate(int[] arr, int rotations){
+		
+		
+//		int start = 0;
+//		int end = arr.length - 1;
+//		while(start <= end){
+//			int temp = arr[start];
+//			arr[start] = arr[end];
+//			arr[end] = temp;
+//		}
+		
+		
+		for(int i = arr.length-1; i <= rotations; i-- ){
+			for(int j = 0; j <= arr.length-1; j++ ){
+				int temp = arr[i];
+				arr[j+1] = arr[j];
+				arr[j] = temp; 
+			}
+		}
+		
+		return arr;
+		
+	}
+
+}

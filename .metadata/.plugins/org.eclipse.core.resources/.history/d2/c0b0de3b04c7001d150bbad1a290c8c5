@@ -1,0 +1,19 @@
+package day06;
+
+public class GAProgram02 {
+
+	public static void main(String[] args) {
+		int row = 4;
+		for (int i = 1; i < row; i++) {
+            for (int space = 1; space < row - i; space++) {
+                System.out.print(" ");
+            }
+            for (int stars = 1; stars <= 2 * i - 1; stars++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+
+	}
+
+}

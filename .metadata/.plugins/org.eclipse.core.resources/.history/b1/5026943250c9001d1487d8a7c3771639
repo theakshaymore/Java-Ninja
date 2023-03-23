@@ -1,0 +1,12 @@
+package day08_inheritence;
+
+public class Per_Customer {
+
+	public static void main(String[] args) {
+		
+
+		Customer c1 = new Customer(102, "Sai", "Lath", 3000.80);
+		System.out.println(c1.toString());
+	}
+
+}

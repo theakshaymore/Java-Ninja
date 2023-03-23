@@ -1,0 +1,10 @@
+package day08_inheritence;
+
+public class Com_Customer {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,0 +1,16 @@
+package day08_inheritence;
+
+public class Vehical_Main extends Vehicle {
+
+	public static void main(String[] args) {
+		
+		
+		
+		Car c1 = new Car("MH1210", "Black", 4);
+		
+		System.out.println(c1.toString());
+		
+
+	}
+
+}

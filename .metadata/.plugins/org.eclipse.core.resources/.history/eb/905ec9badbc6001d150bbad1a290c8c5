@@ -1,0 +1,26 @@
+package day06;
+
+public class Pp {
+
+	public static void main(String[] args) {
+		
+		int range = 10;
+		
+		System.out.println(getFib(range));
+
+	}
+	
+	
+	public static int getFib(int range){
+	
+			
+		if(range == 0)
+			return 0;
+		if(range == 1)
+			return 1;
+		else
+			return getFib(range-1) + getFib(range-2);
+		
+	}
+
+}

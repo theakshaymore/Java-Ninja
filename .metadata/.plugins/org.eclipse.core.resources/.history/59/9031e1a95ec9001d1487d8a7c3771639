@@ -1,0 +1,15 @@
+package day08_GA;
+
+public class EmployeeDetails {
+
+	public static void main(String[] args) {
+	
+		
+		FullTimeEmployee fe1 = new FullTimeEmployee(101, "Akshay", "More", "Mumbai", 2000.00, 10000.90);
+		System.out.println(fe1.computeSal());
+		fe1.showDetails();
+//		PartTimeEmployee pe1 = new PartTimeEmployee();
+
+	}
+
+}
