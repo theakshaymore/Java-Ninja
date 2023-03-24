@@ -17,13 +17,18 @@ public class Com_Customer extends Customer {
 		this.phoneNo = phoneNo;
 		this.permanantAddress = permanantAddress;
 	}
-
-
-	public static void main(String[] args) {
-		
-		Customer c1 = new Customer(101, "Akshay", "More", 2000.80);
-		System.out.println(c1.toString());
-
+	
+	@Override
+	public void getCustomerDetails(){
+		System.out.println("Overring");
 	}
+
+
+//	public static void main(String[] args) {
+//		
+//		Customer c1 = new Customer(101, "Akshay", "More", 2000.80);
+//		System.out.println(c1.toString());
+//
+//	}
 
 }

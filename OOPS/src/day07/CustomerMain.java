@@ -1,6 +1,6 @@
 package day07;
 
-public class CustomerMain {
+public class CustomerMain  {
 
 	public static void main(String[] args) {
 		

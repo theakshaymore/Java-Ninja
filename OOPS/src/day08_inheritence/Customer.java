@@ -1,6 +1,6 @@
 package day08_inheritence;
 
-public class Customer {
+abstract class Customer {
 
 	private int id;
 	private String firstname, lastName;
@@ -55,6 +55,8 @@ public class Customer {
 		return "Customer [id=" + id + ", firstname=" + firstname + ", lastName=" + lastName + ", balance=" + balance
 				+ "]";
 	}
+	
+	abstract void getCustomerDetails();
 	
 	
 }

@@ -20,7 +20,13 @@ package day08_inheritence;
 public class Bank {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		
+		Com_Customer c1 = new Com_Customer(12345, "sssssss");
+		c1.getCustomerDetails();
+		
+		
+		Customer c2 = new Com_Customer(123344, "hjhj");
+		System.out.println(c2.toString());
 
 	}
 
