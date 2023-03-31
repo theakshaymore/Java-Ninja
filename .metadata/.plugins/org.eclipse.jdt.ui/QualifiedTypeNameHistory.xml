@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="java.time.LocalDate"/>
-<fullyQualifiedTypeName name="java.util.Arrays"/>
-<fullyQualifiedTypeName name="java.time.format.DateTimeFormatter"/>
-<fullyQualifiedTypeName name="java.lang.Character"/>
-<fullyQualifiedTypeName name="java.util.Scanner"/>
-<fullyQualifiedTypeName name="day08_GA.FullTimeEmployee"/>
-<fullyQualifiedTypeName name="day08_GA.PartTimeEmployee"/>
-<fullyQualifiedTypeName name="day09.CabCustomer"/>
-<fullyQualifiedTypeName name="day07.Customer"/>
-<fullyQualifiedTypeName name="java.lang.Override"/>
-<fullyQualifiedTypeName name="day08_inheritence.Customer"/>
-<fullyQualifiedTypeName name="day08_inheritence.Com_Customer"/>
-<fullyQualifiedTypeName name="day09_GA.Rectangle"/>
-<fullyQualifiedTypeName name="day09_GA.Circle"/>
-<fullyQualifiedTypeName name="day09_GA.Triangle"/>
+<fullyQualifiedTypeName name="java.io.FileWriter"/>
+<fullyQualifiedTypeName name="java.io.BufferedWriter"/>
+<fullyQualifiedTypeName name="java.awt.List"/>
+<fullyQualifiedTypeName name="java.io.FileReader"/>
+<fullyQualifiedTypeName name="java.io.BufferedReader"/>
+<fullyQualifiedTypeName name="day13_GA.Employee"/>
+<fullyQualifiedTypeName name="java.io.FileNotFoundException"/>
+<fullyQualifiedTypeName name="day13_GA.EmployeeDetails"/>
+<fullyQualifiedTypeName name="java.util.Iterator"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="java.io.RandomAccessFile"/>
+<fullyQualifiedTypeName name="java.io.IOException"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
 </qualifiedTypeNameHistroy>

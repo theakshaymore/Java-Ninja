@@ -1,0 +1,111 @@
+Interface:(class)
+
+-->interface keyword
+--->implements keyword
+-->allow only abstarct methods(holds only method declartions)
+-->defination of a method-->interface-->future class
+
+-->private not allow 
+
+Note:not possible to create object for interface.
+100% abstarction 
+==================================================================================
+(class)
+Student--->id,name,m1,m2,m3,no_of_days_attended,no_of_working_days
+
+(interface)
+attendence,score
+
+Jntu --->extends student implements attendence,score
+
+university-->main()
+======================================================================
+Collections:
+
+-->value--->variable
+-->group of values-->arrays(fixed size,similar type of data)
+-->id-->int[]
+-->name-->String[]
+101--->101-->??name??
+
+multiple objects-->collection 
+
+collection is a object used to store group of objects[DMA]
+
+interfaces and classes..
+
+
+interface:
+List--->implemeneted classes(java.util*)
+
+Note: Allows duplicates
+
+ArrayList:random order
+LinkedList:insertion order
+Vector
+===========================================
+Set-->implemented classes(java.util*)
+
+Note:Not  Allows duplicates,allows heterogenous data
+
+HashSet :random order
+linkedHashSet : insertion order
+TreeSet : order it will maintain(Asc)
+===============================================================================
+
+syntax:  Class_name<Generic>  coll_obj_name=new Class_name<Generic>();
+================================================================================
+
+list--->one more list
+//copy the elements from one list to otherlist
+===================================================================
+Employee-->id,name,address,email
+5 employee objects and store all objects in collection object
+==========================================================================
+Sorting:
+
+List--->sort()--->apply to elements
+
+
+Objects Sorting:
+
+Comparable--->Based on single criteria
+java.lang*
+compareTo()--->compare()
+
+Comparator--->Based on multiple criteria
+java.util*
+compare()--->compareTo()
+==============================================================================
+Iterator:
+
+hasNext():return true/false based on next exsistance
+next():it is used to store pointed value
+remove():inorder to delete the value
+=============================================================
+Movie-->id,name,rating,duration
+
+Movie_main--->5 movie objects
+
+1--do sorting based on id
+2--do sorting based on name
+3--do sorting based on rating
+4--do sorting based on duration
+===================================================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
