@@ -1,0 +1,52 @@
+--Creating Course table:
+
+- create table Course(courseId int primary key auto_increment, courseName varchar(50), fees int, duration varchar(20));
+
+
+- INSERT INTO Course (courseName, fees, duration) VALUES ('Java', 25000, '6 Months'), ('MySQL', 12000, '3 Months'), ('Angular', 30000, '3 Months'), ('React', 25000, '3 Months'), ('Spring', 15000, '3 Months');
+
+
+- select * from Course;
++----------+------------+-------+----------+
+| courseId | courseName | fees  | duration |
++----------+------------+-------+----------+
+|        1 | Java       | 25000 | 6 Months |
+|        2 | MySQL      | 12000 | 3 Months |
+|        3 | Angular    | 30000 | 3 Months |
+|        4 | React      | 25000 | 3 Months |
+|        5 | Spring     | 15000 | 3 Months |
++----------+------------+-------+----------+
+
+
+
+
+--Creating Sudent table:
+
+- create table Student(studentId int primary key, studentname varchar(50), city varchar(50), age int, courseId int, foreign key(courseId) references Course(courseId));
+
+
+- INSERT INTO Student (studentId, studentName, city, age, courseId) VALUES (101, 'Pasha', 'Hyderabad', 25, 2), (102, 'Harsha', 'Pune', 22, 2), (103, 'Venkat', 'Chennai', 23, 3), (104, 'Deepika', 'Hyderabad', 25, 4), (105, 'Gayathri', 'Mumbai', 24, 5);
+
+
+-  select * from Student;
++-----------+-------------+-----------+------+----------+
+| studentId | studentname | city      | age  | courseId |
++-----------+-------------+-----------+------+----------+
+|       101 | Pasha       | Hyderabad |   25 |        2 |
+|       102 | Harsha      | Pune      |   22 |        2 |
+|       103 | Venkat      | Chennai   |   23 |        3 |
+|       104 | Deepika     | Hyderabad |   25 |        4 |
+|       105 | Gayathri    | Mumbai    |   24 |        5 |
++-----------+-------------+-----------+------+----------+
+
+
+
+--student details who are registered for the MySQL course:
+
+- select * from Student where courseId = (select courseId from Course where courseName = "MySQL");
++-----------+-------------+-----------+------+----------+
+| studentId | studentname | city      | age  | courseId |
++-----------+-------------+-----------+------+----------+
+|       101 | Pasha       | Hyderabad |   25 |        2 |
+|       102 | Harsha      | Pune      |   22 |        2 |
++-----------+-------------+-----------+------+----------+

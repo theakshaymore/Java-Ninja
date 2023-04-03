@@ -1,0 +1,126 @@
+- create table EmployeeDetails(EmpId int, FullName varchar(50), ManagerId int, DateOfJoining date, City varchar(50));
+
+- insert into EmployeeDetails(EmpId, FullName, ManagerId, DateOfJoining, City) values(121, "John Snow", 321, "2019-01-31", "Toronto"), (321, "Walter White", 986, "2022-01-30", "California"), (421, "Kuldeep Rana", 876, "2021-11-27", "New Delhi");
+
+- select * from EmployeeDetails;
++-------+--------------+-----------+---------------+------------+
+| EmpId | FullName     | ManagerId | DateOfJoining | City       |
++-------+--------------+-----------+---------------+------------+
+|   121 | John Snow    |       321 | 2019-01-31    | Toronto    |
+|   321 | Walter White |       986 | 2022-01-30    | California |
+|   421 | Kuldeep Rana |       876 | 2021-11-27    | New Delhi  |
++-------+--------------+-----------+---------------+------------+
+
+- create table EmployeeSalary(EmpId int, Project varchar(50),Salary int, Variable int);
+
+- insert into EmployeeSalary(EmpId, Project, Salary, Variable) values(121, "P1", 8000, 500), (321, "P2", 10000, 1000), (421, "P1", 12000, 0);
+
+- select * from EmployeeSalary;
++-------+---------+--------+----------+
+| EmpId | Project | Salary | Variable |
++-------+---------+--------+----------+
+|   121 | P1      |   8000 |      500 |
+|   321 | P2      |  10000 |     1000 |
+|   421 | P1      |  12000 |        0 |
++-------+---------+--------+----------+
+
+
+
+1) select EmpId, FullName from EmployeeDetails where ManagerId = 986;
++-------+--------------+
+| EmpId | FullName     |
++-------+--------------+
+|   321 | Walter White |
++-------+--------------+
+
+
+2) select Project from EmployeeSalary;
++---------+
+| Project |
++---------+
+| P1      |
+| P2      |
+| P1      |
++---------+
+
+
+3) select count(EmpId) from EmployeeSalary where Project = "P1";
++--------------+
+| count(EmpId) |
++--------------+
+|            2 |
++--------------+
+
+
+4) select max(Salary), min(Salary), avg(Salary) from EmployeeSalary;
++-------------+-------------+-------------+
+| max(Salary) | min(Salary) | avg(Salary) |
++-------------+-------------+-------------+
+|       12000 |        8000 |  10000.0000 |
++-------------+-------------+-------------+
+
+
+5) select EmpId from EmployeeSalary where Salary between 9000 and 15000;
++-------+
+| EmpId |
++-------+
+|   321 |
+|   421 |
++-------+
+
+
+6) select * from EmployeeDetails where City = "Toronto" and ManagerId = 321;
++-------+-----------+-----------+---------------+---------+
+| EmpId | FullName  | ManagerId | DateOfJoining | City    |
++-------+-----------+-----------+---------------+---------+
+|   121 | John Snow |       321 | 2019-01-31    | Toronto |
++-------+-----------+-----------+---------------+---------+
+
+
+7)  select * from EmployeeDetails where City = "California" or ManagerId = 321;
++-------+--------------+-----------+---------------+------------+
+| EmpId | FullName     | ManagerId | DateOfJoining | City       |
++-------+--------------+-----------+---------------+------------+
+|   121 | John Snow    |       321 | 2019-01-31    | Toronto    |
+|   321 | Walter White |       986 | 2022-01-30    | California |
++-------+--------------+-----------+---------------+------------+
+
+
+8) select * from EmployeeSalary where Project != "P1";
++-------+---------+--------+----------+
+| EmpId | Project | Salary | Variable |
++-------+---------+--------+----------+
+|   321 | P2      |  10000 |     1000 |
++-------+---------+--------+----------+
+
+
+9) select EmpId, Salary + Variable as TotalSalary from EmployeeSalary;
++-------+-------------+
+| EmpId | TotalSalary |
++-------+-------------+
+|   121 |        8500 |
+|   321 |       11000 |
+|   421 |       12000 |
++-------+-------------+
+
+
+10) select * from EmployeeDetails where Fullname like "__hn%";
++-------+-----------+-----------+---------------+---------+
+| EmpId | FullName  | ManagerId | DateOfJoining | City    |
++-------+-----------+-----------+---------------+---------+
+|   121 | John Snow |       321 | 2019-01-31    | Toronto |
++-------+-----------+-----------+---------------+---------+
+
+
+11) select replace(FullName, " ", "-") from EmployeeDetails;
++-----------------------------+
+| replace(FullName, " ", "-") |
++-----------------------------+
+| John-Snow                   |
+| Walter-White                |
+| Kuldeep-Rana                |
++-----------------------------+
+
+
+12) select * from EmployeeDetails where EmpId not in (select distinct EmpId from EmployeeSalary);
+    Empty set (0.00 sec)
