@@ -1,0 +1,19 @@
+A) select rollNo as "roll number",concat(firstName," ",lastName) as "full name" ,date_format(dateOfBirth,"%d-%m-%y") DOB from student where firstName like "__n%";
+
+B) select department.deptName,count(professor.facultyId) as count from department inner join professor on professor.dept=department.deptcode group by department.deptName;
+ 
+C) select deptcode,deptName from department where length(deptname) between 25 and 35;
+ 
+D) select department.deptname,ifnull(department.address,"N/A"),count(*) as count from department left outer join subject on department.deptcode=subject.dept group by department.deptcode;
+ 
+E) select subject.subjectcode,subject.subjectname,count(*) as count from subject inner join professor on professor.subject=subject.subjectcode group by professor.facultyId;
+ 
+F) select subject.subjectcode,subjectname,subject.dept from subject inner join professor on subject.subjectcode=professor.subject where subject.dept != professor.dept;
+ 
+G) select subjectname from subject order by dept;
+ 
+H) select rollno,concat(firstname," ",lastname) as fullName, city from student where length(city)-length(replace(city," ",""))!=0;
+ 
+I) select concat(firstname," ",lastname) as fullName from student order by dateOfBirth limit 1;
+ 
+J) select department.deptname ,count(department.deptcode) as "number of professor" from department inner join professor on professor.dept=department.deptcode group by department.deptcode order by count(department.deptcode) desc limit 1 offset 2;
