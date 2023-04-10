@@ -1,0 +1,44 @@
+
+16) select now(),curdate(),current_time();
++---------------------+------------+----------------+
+| now()               | curdate()  | current_time() |
++---------------------+------------+----------------+
+| 2023-04-07 08:01:15 | 2023-04-07 | 08:01:15       |
++---------------------+------------+----------------+
+
+
+17) select * from EmployeeDetails where year(dateOfJoining)=2016;
++-------+-------------+-----------+---------------+
+| EmpId | FullName    | ManagerId | DateOfJoining |
++-------+-------------+-----------+---------------+
+|   421 | Kuldeep Das |       876 | 2016-11-27    |
++-------+-------------+-----------+---------------+
+
+
+18) select * from EmployeeSalary order by salary desc limit 1;
++-------+---------+--------+
+| EmpId | Project | Salary |
++-------+---------+--------+
+|   421 | P1      |  12000 |
++-------+---------+--------+
+
+
+19) select * from EmployeeSalary order by salary desc limit 1 offset 2;
++-------+---------+--------+
+| EmpId | Project | Salary |
++-------+---------+--------+
+|   121 | P1      |   8000 |
++-------+---------+--------+
+
+
+20) SELECT *
+	FROM EmployeeSalary Emp1
+	WHERE (2) = (
+    	SELECT COUNT(DISTINCT(Emp2.Salary))
+    	FROM Employeesalary Emp2
+    	WHERE Emp2.Salary > Emp1.Salary)
++-------+---------+--------+
+| EmpId | Project | Salary |
++-------+---------+--------+
+|   121 | P1      |   8000 |
++-------+---------+--------+

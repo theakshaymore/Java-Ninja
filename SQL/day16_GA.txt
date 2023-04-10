@@ -1,0 +1,178 @@
+1) CREATE TABLE EmployeeDetails( EmpId INT PRIMARY KEY, FullName VARCHAR(50) NOT NULL, ManagerId INT, DateOfJoining DATE );
+
+1.1) INSERT INTO EmployeeDetails (EmpId, FullName, ManagerId, DateOfJoining)
+   VALUES (121, 'John Smith', 321, '2014-01-31'),
+       (321, 'Walter Johnny', 986, '2015-01-30'),
+       (421, 'Kuldeep Das', 876, '2016-11-27');
+
+1.2) select * from EmployeeDetails;
++-------+---------------+-----------+---------------+
+| EmpId | FullName      | ManagerId | DateOfJoining |
++-------+---------------+-----------+---------------+
+|   121 | John Smith    |       321 | 2014-01-31    |
+|   321 | Walter Johnny |       986 | 2015-01-30    |
+|   421 | Kuldeep Das   |       876 | 2016-11-27    |
++-------+---------------+-----------+---------------+
+
+
+2) CREATE TABLE EmployeeSalary( EmpId INT, Project VARCHAR(10), Salary INT, PRIMARY KEY (EmpId, Project), FOREIGN KEY (EmpId)      REFERENCES EmployeeDetails(EmpId));
+
+2.1) INSERT INTO EmployeeSalary (EmpId, Project, Salary)
+   VALUES (121, 'P1', 8000),
+       (321, 'P2', 10000),
+       (421, 'P1', 12000);
+
+2.2) select * from EmployeeSalary;
++-------+---------+--------+
+| EmpId | Project | Salary |
++-------+---------+--------+
+|   121 | P1      |   8000 |
+|   321 | P2      |  10000 |
+|   421 | P1      |  12000 |
++-------+---------+--------+
+-------------------------------------------------------------------------------------------------------
+ANS:
+
+1)  select count(EmpId)  from EmployeeSalary where Project = "P1";
++----------+
+| COUNT(*) |
++----------+
+|        2 |
++----------+
+
+
+2) select FullName from EmployeeDetails inner join EmployeeSalary on EmployeeDetails.EmpId = EmployeeSalary.EmpId where Salary >= 5000 and Salary <= 10000;
++---------------+
+| FullName      |
++---------------+
+| John smith    |
+| Walter johnny |
++---------------+
+
+
+3) SELECT Project, COUNT(*) AS EmployeeCount FROM EmployeeSalary GROUP BY Project ORDER BY EmployeeCount DESC;
++---------+----------+
+| Project | EmpCount |
++---------+----------+
+| P1      |        2 |
+| P2      |        1 |
++---------+----------+
+
+
+4) select substring_index(FullName, " ", 1) from EmployeeDetails;
++-----------+
+| FirstName |
++-----------+
+| John      |
+| Walter    |
+| Kuldeep   |
++-----------+
+
+
+5) SELECT EmployeeDetails.FullName, EmployeeSalary.Salary FROM EmployeeDetails LEFT JOIN EmployeeSalary ON EmployeeDetails.EmpId = EmployeeSalary.EmpId;
++---------------+--------+
+| FullName      | Salary |
++---------------+--------+
+| John smith    |   8000 |
+| Walter johnny |  10000 |
+| Kuldeep das   |  12000 |
++---------------+--------+
+
+
+6) SELECT DISTINCT E1.FullName FROM EmployeeDetails E1 JOIN EmployeeDetails E2 ON E1.EmpId = E2.ManagerId;
++------------+
+| FullName   |
++------------+
+| John smith |
++------------+
+
+
+7.SELECT EmployeeDetails.* FROM EmployeeDetails INNER JOIN EmployeeSalary ON EmployeeDetails.EmpId = EmployeeSalary.EmpId;
++-------+---------------+-----------+---------------+
+| EmpId | FullName      | ManagerId | DateOfJoining |
++-------+---------------+-----------+---------------+
+|   121 | John smith    |       321 | 2014-01-31    |
+|   321 | Walter johnny |       986 | 2015-01-30    |
+|   421 | Kuldeep das   |       876 | 2016-11-27    |
++-------+---------------+-----------+---------------+
+
+
+8. SELECT FullName, COUNT(*) as count
+    -> FROM EmployeeDetails
+    -> GROUP BY FullName
+    -> HAVING COUNT(*) > 1;
+Empty set (0.01 sec)
+
+
+9.9.SELECT * FROM EmployeeDetails WHERE empid IN (SELECT empid FROM employeeDetails GROUP BY empid HAVING COUNT(*) > 1);
+Empty set (0.01 sec)
+
+
+10. SELECT *
+    -> FROM (
+    ->   SELECT *, ROW_NUMBER() OVER (ORDER BY EmpId) as row_num
+    ->   FROM EmployeeDetails
+    -> ) as t
+    -> WHERE row_num % 2 = 1;
++-------+-------------+-----------+---------------+---------+
+| EmpId | FullName    | ManagerId | DateOfJoining | row_num |
++-------+-------------+-----------+---------------+---------+
+|   121 | John smith  |       321 | 2014-01-31    |       1 |
+|   421 | Kuldeep das |       876 | 2016-11-27    |       3 |
++-------+-------------+-----------+---------------+---------+
+
+
+11.SELECT *
+    -> FROM (
+    ->   SELECT *, ROW_NUMBER() OVER (ORDER BY EmpId) as row_num
+    ->   FROM EmployeeDetails
+    -> ) as t
+    -> WHERE row_num % 2 = 0;
++-------+---------------+-----------+---------------+---------+
+| EmpId | FullName      | ManagerId | DateOfJoining | row_num |
++-------+---------------+-----------+---------------+---------+
+|   321 | Walter johnny |       986 | 2015-01-30    |       2 |
++-------+---------------+-----------+---------------+---------+
+
+
+12.CREATE TABLE employee AS
+    -> SELECT *
+    -> FROM employeedetails;
+ select * from employee;
++-------+---------------+-----------+---------------+
+| EmpId | FullName      | ManagerId | DateOfJoining |
++-------+---------------+-----------+---------------+
+|   121 | John smith    |       321 | 2014-01-31    |
+|   321 | Walter johnny |       986 | 2015-01-30    |
+|   421 | Kuldeep das   |       876 | 2016-11-27    |
++-------+---------------+-----------+---------------+
+
+
+13.CREATE TABLE new_table LIKE employeedetails;
+select * from new_table;
+Empty set (0.01 sec)
+
+
+14. > SELECT *
+    -> FROM EmployeeDetails ed
+    -> INNER JOIN EmployeeSalary es
+    -> ON ed.EmpId = es.EmpId;
++-------+---------------+-----------+---------------+-------+---------+--------+
+| EmpId | FullName      | ManagerId | DateOfJoining | EmpId | Project | Salary |
++-------+---------------+-----------+---------------+-------+---------+--------+
+|   121 | John smith    |       321 | 2014-01-31    |   121 | P1      |   8000 |
+|   321 | Walter johnny |       986 | 2015-01-30    |   321 | P2      |  10000 |
+|   421 | Kuldeep das   |       876 | 2016-11-27    |   421 | P1      |  12000 |
++-------+---------------+-----------+---------------+-------+---------+--------+
+
+
+15.  SELECT *
+    -> FROM EmployeeDetails e
+    -> WHERE NOT EXISTS (
+    ->   SELECT 1
+    ->   FROM EmployeeSalary s
+    ->   WHERE e.EmpId = s.EmpId
+    -> );
+Empty set (0.00 sec)
+
+
