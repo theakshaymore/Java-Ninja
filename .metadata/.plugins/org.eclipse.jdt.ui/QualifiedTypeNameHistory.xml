@@ -11,6 +11,21 @@
 <fullyQualifiedTypeName name="java.util.Iterator"/>
 <fullyQualifiedTypeName name="java.io.RandomAccessFile"/>
 <fullyQualifiedTypeName name="java.io.IOException"/>
-<fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.sql.DriverManager"/>
+<fullyQualifiedTypeName name="java.sql.Connection"/>
+<fullyQualifiedTypeName name="java.lang.System"/>
+<fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
+<fullyQualifiedTypeName name="java.sql.Statement"/>
+<fullyQualifiedTypeName name="java.sql.ResultSet"/>
+<fullyQualifiedTypeName name="java.lang.StringBuffer"/>
+<fullyQualifiedTypeName name="persistance.EmployeeDao"/>
+<fullyQualifiedTypeName name="persistance.EmployeeDaoImpl"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="java.util.Scanner"/>
+<fullyQualifiedTypeName name="services.EmployeeService"/>
+<fullyQualifiedTypeName name="services.EmployeeServiceImpl"/>
+<fullyQualifiedTypeName name="persistance.GlobalConfig"/>
+<fullyQualifiedTypeName name="com.entity.Employee"/>
+<fullyQualifiedTypeName name="entity.Employee"/>
 </qualifiedTypeNameHistroy>
