@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Day23_Employee Register</title>
+</head>
+<style>
+
+label {
+	display: inline-block;
+	width: 100px;
+	text-align: right;
+	margin-right: 10px;
+}
+
+input[type="text"], input[type="password"], input[type="email"] {
+	padding: 5px;
+	margin-bottom: 15px;
+	border-radius: 5px;
+	border: none;
+	box-shadow: 1px 1px 5px #ccc;
+	width: 250px;
+}
+</style>
+<body>
+	<div>
+		<h1>Employee Registration</h1>
+		<form action="RegisterServlet" method="post">
+			<label>EmpID:</label> <input type="text" name="empid"><br>
+
+			<label>Name:</label> <input type="text" name="name"><br>
+
+			<label>Salary:</label> <input type="text" name="salary"><br>
+
+			<label>Gender:</label> <input type="text" name="gender"><br>
+
+			<label>Email-Id:</label> <input type="email" name="email"><br>
+
+			<label>Password:</label> <input type="password" name="password"><br>
+
+			<input type="submit" value="Register" style="margin-left: 120px;">
+		</form>
+	</div>
+</body>
+</html>
