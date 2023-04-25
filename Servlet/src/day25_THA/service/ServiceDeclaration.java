@@ -8,9 +8,5 @@ import entity.Employee;
 
 public interface ServiceDeclaration {
 	
-	public List<Employee> displayAll() throws ClassNotFoundException, SQLException;
-	
-	public int updateEmp(Employee emp) throws ClassNotFoundException, SQLException;
-	
 	public List<Employee> searchEmp(String searchName) throws ClassNotFoundException, SQLException;
 }

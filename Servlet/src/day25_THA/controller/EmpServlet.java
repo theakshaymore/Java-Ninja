@@ -49,27 +49,6 @@ public class EmpServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String updateEmp=request.getParameter("updateEmp");
 		String Search=request.getParameter("Search");
-//		if(updateEmp.equalsIgnoreCase("updateEmp")){
-//			try {
-//				Employee emp=new Employee();
-//				int id=Integer.parseInt(request.getParameter("id"));
-//				String name=request.getParameter("name");
-//				String address=request.getParameter("address");
-//				int deptId=Integer.parseInt(request.getParameter("deptid"));
-//				emp.seteId(id);
-//				emp.seteName(name);
-//				emp.seteAdd(address);
-//				emp.setDeptId(deptId);
-//				int i=new ServiceImplementation().updateEmp(emp);
-//				if(i!=0){
-//					RequestDispatcher rd=request.getRequestDispatcher("JSP_EMP.jsp");
-//					rd.forward(request, response);
-//					doGet(request, response);
-//				}
-//			} catch (ClassNotFoundException | SQLException e) {
-//				e.printStackTrace();
-//			}
-//		} else 
 			if(Search.equalsIgnoreCase("Search")){
 			List<Employee> emp;
 			try {

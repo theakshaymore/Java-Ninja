@@ -7,9 +7,6 @@ import entity.Employee;
 
 
 public interface PersistanceDeclaration {
-	public List<Employee> display() throws ClassNotFoundException, SQLException;
-	
-	public int updateEmp(Employee emp) throws ClassNotFoundException, SQLException;
 	
 	public List<Employee> searchEmp(String searchName) throws ClassNotFoundException, SQLException;
 	

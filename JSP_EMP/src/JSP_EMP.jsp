@@ -19,7 +19,7 @@
 
 <body>
 	<center>
-		<h2>Welcome to HrHome Page</h2>
+		<h2>Welcome to HrHomeee Page</h2>
 		<form action="EmpServlet" method="post">
 			<div class="container">
 				<table class="table table-bordered table-hover">
