@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<title>Edit Employee Details</title>
+</head>
+<body>
+<center>
+<div class="container mt-5">
+<h2>Welcome to HrHome Page</h2>
+	<form action="EmpServlet" action="post">
+	 <div class="container">
+    <div class="row mb-3">
+      <label for="id" class="col-sm-2 col-form-label">ID:</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" name="id">
+      </div>
+    </div>
+    <div class="row mb-3">
+      <label for="name" class="col-sm-2 col-form-label">Name:</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" name="name">
+      </div>
+    </div>
+    <div class="row mb-3">
+      <label for="address" class="col-sm-2 col-form-label">Address:</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" name="address">
+      </div>
+    </div>
+    <div class="row mb-3">
+      <label for="deptid" class="col-sm-2 col-form-label">Dept ID:</label>
+      <div class="col-sm-10">
+        <input type="text" class="form-control" name="deptid">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-10 offset-sm-2">
+        <button type="submit" class="btn btn-primary" name="updateEmp">Update Employee</button>
+      </div>
+    </div>
+  </div>
+	</center>
+</body>
+</html>

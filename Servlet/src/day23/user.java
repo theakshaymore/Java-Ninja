@@ -73,6 +73,7 @@ public class user extends HttpServlet {
 		Class.forName("com.mysql.cj.jdbc.Driver");
 		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/futurefit", "root", "root");
 		
+		
 		PreparedStatement statement = conn.prepareStatement("SELECT * FROM student02 WHERE id = ? AND name = ?");
 		statement.setInt(1, id);
 		statement.setString(2, name);
